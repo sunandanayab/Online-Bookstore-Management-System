@@ -1,0 +1,23 @@
+package books;
+import javax.servlet.*;
+import javax.servlet.http.*;
+import java.io.*;
+public class BookStore extends HttpServlet
+{
+
+protected void doGet(ServletRequest req, ServletResponse res) throws ServletException, IOException
+{
+	res.setContentType("text/html");
+    PrintWriter pw=res.getWriter();
+    String book_name=req.getParameter("name");
+    String author_name=req.getParameter("author");
+    pw.println("<center>");
+    pw.println("<h1><b>----------------------------</b></h1>");
+    pw.println("<h1><b>========Book Details========</b></h1>");
+    pw.println("<h1><b>----------------------------</b></h1>");
+    pw.println("<h2>Name of the Book: "+book_name+"</h2>");
+    pw.println("<h2>Name of the Author: "+author_name+"</h2>");
+    pw.println("</center>");
+    pw.close();
+}
+}
